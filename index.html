@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Profile Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --devops-blue: #0078d7;
+            --devops-purple: #68217a;
+            --devops-dark: #24292e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--devops-blue) 0%, var(--devops-purple) 100%);
+            color: white;
+            padding: 30px 20px;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .title {
+            font-weight: 300;
+            margin: 5px 0 0;
+            opacity: 0.9;
+        }
+        
+        .location {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .location i {
+            font-size: 12px;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .bio {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        .github { background-color: #333; }
+        .linkedin { background-color: #0077b5; }
+        .twitter { background-color: #1da1f2; }
+        .youtube { background-color: #ff0000; }
+        .medium { background-color: #00ab6c; }
+        .dev { background-color: #0a0a0a; }
+        
+        .map-container {
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 150px;
+            border: 0;
+        }
+        
+        .map-caption {
+            margin: 5px 0 0;
+            font-size: 14px;
+            text-align: center;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .skills {
+            margin-top: 20px;
+        }
+        
+        .skills h3 {
+            margin-bottom: 15px;
+            color: var(--devops-dark);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .skill-tag {
+            background-color: #f0f0f0;
+            color: var(--devops-dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--devops-blue) 0%, var(--devops-purple) 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 120, 215, 0.3);
+        }
+        
+        .devops-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 24px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 14px;
+            justify-content: center;
+        }
+        
+        .info-item i {
+            width: 20px;
+            text-align: center;
+            color: var(--devops-blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="devops-icon">
+            <i class="fas fa-server"></i>
+        </div>
+        <div class="card-header">
+            <!-- Replace with your image path -->
+            <img src="profile.jpg" alt="Shishanshu Rai" class="profile-img">
+            <h1>Shishanshu Rai</h1>
+            <p class="title">Sr DevOps Engineer</p>
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Based in vapi, GUJRAT India</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="bio">
+                Passionate DevOps professional with expertise in CI/CD, cloud infrastructure, 
+                and automation. Bridging the gap between development and operations.
+            </p>
+            
+            <div class="map-container">
+                <iframe 
+                    width="100%" 
+                    height="150" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    src="https://maps.google.com/maps?q=vapi,+India&zoom=12&output=embed">
+                </iframe>
+                <p class="map-caption">
+                    <i class="fas fa-map-pin"></i> Currently working from vapi, Gujrat India
+                </p>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-globe"></i>
+                <span>Timezone: <strong>IST (UTC+5:30)</strong></span>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://github.com/yourusername" class="social-link github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" class="social-link linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com/yourusername" class="social-link twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://youtube.com/yourchannel" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://medium.com/@yourusername" class="social-link medium">
+                    <i class="fab fa-medium-m"></i>
+                </a>
+                <a href="https://dev.to/yourusername" class="social-link dev">
+                    <i class="fab fa-dev"></i>
+                </a>
+            </div>
+            
+            <div class="skills">
+                <h3>Skills & Technologies</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">zabbix</span>
+                    <span class="skill-tag">grafna</span>
+                    <span class="skill-tag">Ansible</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">Gitlab</span>
+                    <span class="skill-tag">Nagios</span>
+                    <span class="skill-tag">Nginx</span>
+                    <span class="skill-tag">Tomcat</span>
+                    <span class="skill-tag">Cassandra</span>
+                    <span class="skill-tag">Mysql</span>
+                    <span class="skill-tag">Mongodb</span>
+                    <span class="skill-tag">Ubuntu</span>
+                    <span class="skill-tag">Gitlab</span>
+                </div>
+            </div>
+            
+            <a href="mailto:raishishanshu@gmail.com" class="contact-btn">Contact Me</a>
+        </div>
+    </div>
+</body>
+</html>
